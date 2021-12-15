@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Disney Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/fort-awesome-alt-brands.svg" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- START NAVBAR -->
+    <nav class="navbar is-info custom-shadow" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <img src="./assets/img/disneyLogo.png" width="200" alt="Disney Logo" />
+      </div>
+      <div class="navbar-end content is-large mr-6 mt-4">
+        <h1 class="has-text-weight-bold has-text-black">Disney Dashboard</h1>
+      </div>
+    </nav>
+    <!-- START DASHBOARD -->
+    <div class="columns mt-5">
+      <!-- START SEARCH AND FAVORITES -->
+      <div class="column is-one-fifth ml-4">
+        <h2 class="is-size-1 has-text-weight-bold has-text-black mb-3">Search Characters:</h2>
+        <form>
+          <div>
+            <input id="input" class="input is-large is-info mb-3" type="text" placeholder="Character input">
+          </div>
+          <div id="error" class="notification is-size-5 is-danger is-light" style="display: none">
+            <span class="icon has-text-danger">
+              <i class="fas fa-ban"></i>
+            </span>
+            <button class="delete"></button>
+            <span>Invalid Character! Please try again.</span>
+          </div>
+          <div class="bb">
+            <button id="submitBtn" class="custom-shadow mb-4" type="submit">Search</button>
+          </div>
+        </form>
+        <div class="level my-3">
+          <h2 class="is-size-2 has-text-weight-bold has-text-black">Favorites:</h2>
+          <div>
+            <button id="p-button" class="button is-light custom-shadow mr-2" disabled>
+              <i class="fas fa-plus"></i>
+            </button>
+            <button id="m-button" class="button is-light custom-shadow" disabled>
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <div id="favorites" class="buttons are-medium"></div>
+        <!-- START BULMA MODAL -->
+        <div id="modal-ter" class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <section class="modal-card-body">
+              <div class="content">
+                <p id='modal-text' style='color:black'>Are you sure you want to remove a favorite?</p>
+              </div>
+            </section>
+            <footer class="modal-card-foot">
+              <button id='modal-yes-button' class="button is-success">Yes</button>
+              <button id='modal-no-button' class="button">No</button>
+            </footer>
+          </div>
+        </div>
+      </div>
+      <!-- START CONTENT -->
+      <div class="column mx-5">
+        <div class="columns content is-large custom-shadow main b">
+          <div class="column ml-5 my-4">
+            <div id="primary" class="level">
+              <div>
+                <h1 id="primary-name" class="title is-1 has-text-black pr-6"></h1>
+                <a id="film-ref" href="#film-start" class="is-size-4 is-underlined"></a>
+              </div>
+              <feature id="polaroid" class="level-item"></feature>
+            </div>
+            <div class="columns">
+              <div class="column">
+                <h1 class="title is-2">Shows:</h1>
+                <ul id="show"></ul>
+              </div>
+              <div class="column">
+                <h1 class="title is-2">Games:</h1>
+                <ul id="game"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="columns main mt-3">
+          <div class="column custom-shadow b">
+            <div class="ml-5 level">
+              <h1 id="film-start" class="title is-2">Films:</h1>
+              <a id="name-ref"" href="#primary-name" class="is-size-4 is-underlined"></a>
+            </div>
+            <ul id="film"></ul>
+          </div>
+        </div>
+      </div>
+      <div id="fixed" class="fixed" style="display: none">
+        <iframe id="trailer" src="" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" frameborder="no" scrolling="no"></iframe>
+        <button id="delBtn" class="delete"></button>
+        &nbsp;
+      </div>
+      <div id="warn" class="notification is-warning fixed mb-1 mr-1" style="display: none">
+        <button id="warnBtn" class="delete"></button>
+        <i class="fas fa-exclamation-triangle"></i>
+        Film does not have available trailer.
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"
+        integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+  </body>
+
+</html>
