@@ -113,3 +113,8 @@ box-shadow: 10px 10px 15px rgba(63, 63, 63, 0.973);
 margin: 10px 20px 40px 30px;
 
 }
+
+.description {
+    display: block;
+    text-align: center;
+}
